@@ -31,6 +31,7 @@ abstract class AuthorizationRequest {
 enum AppleIDAuthorizationScopes {
   email,
   fullName,
+  searchads,
 }
 
 /// An [AuthorizationRequest] which authenticates a user based on their Apple ID.
@@ -80,7 +81,9 @@ class AppleIDAuthorizationRequest implements AuthorizationRequest {
           if (scope == AppleIDAuthorizationScopes.email)
             'email'
           else if (scope == AppleIDAuthorizationScopes.fullName)
-            'fullName',
+            'fullName'
+          else if (scope == AppleIDAuthorizationScopes.searchads)
+            'searchads',
       ],
     };
   }
